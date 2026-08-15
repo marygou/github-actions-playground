@@ -1,0 +1,24 @@
+name: Info
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  info: 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Display system information
+        run: |
+          echo "Operating System: $(uname -s)"
+          echo "Kernel Version: $(uname -r)"
+          echo "Architecture: $(uname -m)"
+          echo "CPU Info:"
+          lscpu
+          echo "Memory Info:"
+          free -h
