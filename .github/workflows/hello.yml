@@ -1,0 +1,17 @@
+# name of the workflow (will be displayed in the Actions tab)
+name: Hello GitHub Actions
+
+# this workflow will run on every push to the repository
+on:
+  push:
+
+
+# jobs to run
+jobs:
+  hello:
+    runs-on: ubuntu-latest # the type of runner that the job will run on
+
+    # steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Say hello
+        run: echo "Hello Mariana!"
